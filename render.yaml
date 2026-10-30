@@ -1,0 +1,8 @@
+services:
+
+type: web
+name: em-digital-app
+env: php
+plan: free
+buildCommand: ""
+startCommand: php -S 0.0.0.0:$PORT
