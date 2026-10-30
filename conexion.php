@@ -12,7 +12,8 @@ $user     = 'em_user';
 $password = '3hffkMgub44NbJIaArLb4xtaHF3Xb4y0';
 
 try {
-    $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
+    // Agregamos sslmode=require para que Render acepte la conexión cifrada
+    $dsn = "pgsql:host=$host;port=$port;dbname=$dbname;sslmode=require";
     $pdo = new PDO($dsn, $user, $password, [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
